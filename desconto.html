@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Bem-vindo</h1>
+    <p>Insira o valor total da sua compra:</p>
+    <input type="number" id="valorCompra" placeholder="Insira o valor em R$">
+    <button onclick="calcularDesconto()">Calcular Desconto</button>
+    <p>Desconto aplicado: <span id="desconto"></span></p>
+  
+    <script>
+        function calcularDesconto() {
+            const valorCompra = parseFloat(document.getElementById('valorCompra').value);
+  
+            let desconto = 0;
+  
+            if (valorCompra > 200) {
+                desconto = 0.2; // 20%
+            } else if (valorCompra > 100) {
+                desconto = 0.1; // 10%
+            }
+            else if(valorCompra<=100){
+                desconto=0.05;
+  
+            }
+  
+            const valorDesconto = valorCompra * desconto;
+            document.getElementById('desconto').textContent = `R$ ${valorDesconto.toFixed(2)}`;
+        }
+    </script>
+    <div id="mensagem"></div>
+  
+    <script>
+        function cadastrarUsuario() {
+            // Obter os valores do formulário
+            var nome = document.getElementById("nome").value;
+            var email = document.getElementById("email").value;
+            var senha = document.getElementById("senha").value;
+  
+            // Validar os campos (adicionar mais validações conforme necessário)
+            if (nome === "" || email === "" || senha === "") {
+                document.getElementById("mensagem").innerHTML = "Por favor, preencha todos os campos.";
+                return;
+            }
+  
+            // Criar um objeto de usuário
+            var usuario = {
+                nome: nome,
+                email: email,
+                senha: senha
+            };
+  
+            // Aqui você pode enviar o objeto 'usuario' para um servidor backend para armazenamento
+            // Por enquanto, apenas exibiremos os dados no console
+            console.log("Usuário cadastrado: ", usuario);
+  
+            // Limpar o formulário e exibir uma mensagem de sucesso
+            document.getElementById("cadastroForm").reset();
+            document.getElementById("mensagem").innerHTML =
+             "Cadastro realizado com sucesso!";
+        }
+        </script>
+</body>
+</html>

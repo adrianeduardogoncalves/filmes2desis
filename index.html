@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Página de Filmes</title>
+
+  <header>
+    <div class="caixa">
+      <h1>
+      </h1>
+
+      <nav>
+        <ul>
+          <li><a href="cadastro.html">Cadastro</a></li>
+          <li><a href="desconto.html">Desconto</a></li>
+          <li><a href="satisfacao.html">Satisfação</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  </form>
+  <style>
+    .banner {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      background-size: cover;
+      text-align: center;
+      color: white;
+      font-size: 50px;
+      padding-top: 150px;
+    }
+
+    .moving-text {
+      position: absolute;
+      top: 40%; 
+      left: -100%;
+      white-space: nowrap;
+      animation: moveText 10s linear infinite;
+      color: rgb(0, 0, 0);
+    }
+
+    .caixa {
+	position: relative;
+	width: 940px;
+	margin: 0 auto;
+  background-color: grey;
+}
+nav li {
+	display: inline;
+	margin: 0 0 0 15px;
+}
+
+nav a {
+	text-transform: uppercase;
+	color: #000000;
+	font-weight: bold;
+	font-size: 22px;
+	text-decoration: none;
+
+}
+nav a:hover {
+	color: #C78C69;
+	text-decoration: underline;
+}
+
+    @keyframes moveText {
+      0% {
+        left: -100%;
+      }
+      100% {
+        left: 100%;
+      }
+    }
+
+    .filme {
+      display: inline-block;
+      align-items: center;
+      margin: 10px;
+      font-size: 18px;
+    }
+
+    .filme img {
+      width: 100px; 
+      margin-right: 10px;
+    }
+    #movendo {
+      position: absolute;
+      transition: transform 2s linear;
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <div class="moving-text">BEM VINDO AO MELHOR CINEMA!</div>
+   
+  </div>
+ 
+  <h2>Filmes Disponiveis </h2>
+  <div class="filme">
+    <img src="a.jpg" alt="Filme 1">
+    <span>Filme </span>
+    <span> Preço: R$ 60,00</span>
+  </div>
+  <div class="filme">
+    <img src="aaa.jpg" alt="Filme 2">
+    <span>Filme </span>
+    <span>Preço: R$ 65,00</span>
+  </div>
+  <div class="filme">
+    <img src="aaaa.jpg" alt="Filme 3">
+    <span>Filme </span>
+    <span>Preço: R$ 55,00</span>
+  </div>
+  <div class="filme">
+    <img src="01.jpg" alt="Filme 1">
+    <span>Filme </span>
+    <span> Preço: R$ 60,00</span>
+  </div>
+  <div class="filme">
+    <img src="02.jpg" alt="Filme 1">
+    <span>Filme </span>
+    <span> Preço: R$ 60,00</span>
+  </div>
+  <div class="filme">
+    <img src="03.jpg" alt="Filme 1">
+    <span>Filme </span>
+    <span> Preço: R$ 60,00</span>
+  </div>
+  <div class="filme">
+    <img src="04.jpg" alt="Filme 1">
+    <span>Filme </span>
+    <span> Preço: R$ 60,00</span>
+  </div>
+  <div class="filme">
+    <img src="05.jpg" alt="Filme 1">
+    <span>Filme </span>
+    <span> Preço: R$ 60,00</span>
+  </div>
+  <div class="filme">
+    <img src="06.jpg" alt="Filme 1">
+    <span>Filme </span>
+    <span> Preço: R$ 60,00</span>
+  </div>
+  <div class="filme">
+    <img src="07.jpg" alt="Filme 1">
+    <span>Filme </span>
+    <span> Preço: R$ 60,00</span>
+  </div>
+  <img id="movendo" src="aa.jpg" alt="Imagem em Movimento">
+  <script>
+    function moverImagemAleatoriamente() {
+      var imagem = document.getElementById('movendo');
+      var maxX = window.innerWidth - imagem.clientWidth;
+      var maxY = window.innerHeight - imagem.clientHeight;
+
+      var novaPosX = Math.floor(Math.random() * maxX);
+      var novaPosY = Math.floor(Math.random() * maxY);
+
+      imagem.style.transform = `translate(${novaPosX}px, ${novaPosY}px)`;
+    }
+
+    setInterval(moverImagemAleatoriamente, 2000);
+  </script>
+
+</body>
+</html>
